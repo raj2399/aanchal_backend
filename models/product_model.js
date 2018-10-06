@@ -16,8 +16,8 @@ var product={
         delarr[i]=item[i].Product_id;
         }
          db.query("delete from Product_tbl where Product_id in (?)",[delarr]);
-        return db.query( "delete from stock_tbl where Fk_product_id in (?)",[delarr],callback);\
-        },
+        return db.query( "delete from stock_tbl where Fk_product_id in (?)",[delarr],callback);
+        }
 
 };
 module.exports=product;

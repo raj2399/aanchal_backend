@@ -14,4 +14,27 @@ router.get('/',function(req,res,next){
     });
 });
 
+router.post('/',function(req,res,next){
+    supplier.addSupplier(req.body,function(err,rows){
+        if (err) {
+            res.json(err);
+          } else {  
+              //console.log(rows.insertId);
+              res.json(rows);
+              
+           }          
+            
+            
+          });
+          
+  });
+  router.delete('/:id',function(req,res,next){
+    supplier.deleteSupplier(req.params.id,function(err, rows) {
+        if (err) {
+          res.json(err);
+        } else {
+          res.json(rows);
+        }
+      });
+  });
 module.exports=router;

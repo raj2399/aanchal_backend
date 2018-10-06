@@ -11,7 +11,7 @@ var color_router=require('./routes/color_routes');
 var size_router=require('./routes/size_routes');
 var delete_product=require('./routes/delete_routes');
 var supplier_router=require('./routes/supplier_routes');
-
+var delete_supplier=require('./routes/delete_supplier_routes');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -36,7 +36,7 @@ app.use('/stock',stock_router);
 app.use('/color',color_router);
 app.use('/size',size_router);
 app.use('/supplier',supplier_router);
-
+app.use('/delete_supplier',delete_supplier);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
