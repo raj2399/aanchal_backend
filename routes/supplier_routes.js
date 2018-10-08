@@ -37,4 +37,25 @@ router.post('/',function(req,res,next){
         }
       });
   });
+
+  router.put("/:Supplier_id", function(req, res, next) {
+    supplier.updateSupplier(req.body, req.params.Supplier_id, function(err, rows) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(rows);
+      }
+    });
+  });
+
+  router.get('/:Supplier_id',function(req,res,next){
+supplier.getsupplierById(req.params.Supplier_id,function(err, rows) {
+        if (err) {
+          res.json(err);
+        } else {
+          res.json(rows);
+        }
+      });
+  });
+
 module.exports=router;
