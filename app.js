@@ -12,9 +12,10 @@ var size_router=require('./routes/size_routes');
 var delete_product=require('./routes/delete_routes');
 var supplier_router=require('./routes/supplier_routes');
 var delete_supplier=require('./routes/delete_supplier_routes');
+var employee_router=require('./routes/employee_routes');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var billRouter=require('./routes/bill_routes');
 var app = express();
 
 // view engine setup
@@ -37,6 +38,9 @@ app.use('/color',color_router);
 app.use('/size',size_router);
 app.use('/supplier',supplier_router);
 app.use('/delete_supplier',delete_supplier);
+app.use('/employee',employee_router);
+
+app.use('/bill',billRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
